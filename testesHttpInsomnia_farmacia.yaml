@@ -1,0 +1,225 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Farmacia
+meta:
+  id: wrk_ee7cdb42f3c54bc8986eb8ae1c13837e
+  created: 1785519620460
+  modified: 1785519620460
+  description: ""
+collection:
+  - name: Categoria
+    meta:
+      id: fld_878c51b52b9747df9303d65dc2713b3e
+      created: 1785510000100
+      modified: 1785510000100
+      sortKey: -1785510000100
+      description: Testes CRUD e consulta por atributo da entidade Categoria
+    children:
+      - url: "{{ _.base_url }}/categorias"
+        name: Listar Todas as Categorias
+        meta:
+          id: req_da6156b2788044ed96dcbfba2f1ee1e9
+          created: 1785510000110
+          modified: 1785510000110
+          isPrivate: false
+          description: Lista todos os registros persistidos
+          sortKey: -1785510000110
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias/1"
+        name: Buscar Categoria por ID
+        meta:
+          id: req_38ef46e25bdb4ae9bf6aa259ca652488
+          created: 1785510000120
+          modified: 1785510000120
+          isPrivate: false
+          description: Busca um registro pelo identificador
+          sortKey: -1785510000120
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias/nome/medicamentos"
+        name: Buscar Categorias por Nome
+        meta:
+          id: req_2e8388a18ccf4ea7a96946924c0ccbdc
+          created: 1785510000130
+          modified: 1785519516827
+          isPrivate: false
+          description: Lista registros com base no atributo nome
+          sortKey: -1785510000130
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias"
+        name: Cadastrar Categoria Medicamentos
+        meta:
+          id: req_eeaabba03c6e49a1a64302a9f3033e05
+          created: 1785510000140
+          modified: 1785510000140
+          isPrivate: false
+          description: Cadastra uma categoria de medicamentos de venda livre e controlados
+          sortKey: -1785510000140
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Medicamentos",
+              "descricao": "Analgésicos, antigripais, antibióticos e itens para tratamento contínuo",
+              "ativa": true,
+              "exigePrescricaoMedica": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias"
+        name: Cadastrar Categoria Dermocosmeticos
+        meta:
+          id: req_75700b126b11405a8ad9acbc0801bf1e
+          created: 1785510000141
+          modified: 1785510000141
+          isPrivate: false
+          description: Cadastra uma categoria para produtos de pele e beleza
+          sortKey: -1785510000141
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Dermocosméticos",
+              "descricao": "Hidratantes, cremes corporais, protetores e itens de cuidado diário com a pele",
+              "ativa": true,
+              "exigePrescricaoMedica": false
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias"
+        name: Cadastrar Categoria Higiene Bucal
+        meta:
+          id: req_ed53bf0bec9f41af8100094755fca51e
+          created: 1785510000142
+          modified: 1785510000142
+          isPrivate: false
+          description: Cadastra uma categoria para itens de higiene e prevenção
+          sortKey: -1785510000142
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Higiene Bucal",
+              "descricao": "Cremes dentais, enxaguantes e cuidados diários para a saúde bucal",
+              "ativa": true,
+              "exigePrescricaoMedica": false
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias"
+        name: Atualizar Categoria
+        meta:
+          id: req_4029ad2d96ab4b5196e7952fff1ea657
+          created: 1785510000150
+          modified: 1785510000150
+          isPrivate: false
+          description: Atualiza uma categoria existente
+          sortKey: -1785510000150
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "id": 1,
+              "nome": "Medicamentos e Vitaminas",
+              "descricao": "Categoria para remédios isentos de prescrição, suplementos e vitaminas de uso diário",
+              "ativa": true,
+              "exigePrescricaoMedica": true
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/categorias/3"
+        name: Remover Categoria
+        meta:
+          id: req_6ce59c7c675048fbaaaf5ca267f88da0
+          created: 1785510000160
+          modified: 1785510000160
+          isPrivate: false
+          description: Remove um registro do banco de dados. Ajuste o ID conforme necessário
+          sortKey: -1785510000160
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_891ed532f10341e982854916ce85eec4
+    created: 1785510000000
+    modified: 1785510000000
+environments:
+  name: Base Environment
+  meta:
+    id: env_41b5dee8a16249c9b6904c171503877a
+    created: 1785510000000
+    modified: 1785510000000
+    isPrivate: false
+  data:
+    base_url: http://localhost:9090
