@@ -1,9 +1,13 @@
 package com.generation.farmacia.model;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -37,11 +41,11 @@ public class Categoria {
 	@NotNull(message = "O atributo exigePrescricaoMedica é obrigatório!")
 	private Boolean exigePrescricaoMedica;
 
-	/*
-	@OneToMany
-	@JsonIgnoreProperties("categoria")
-	private Produto produto;
-	*/			
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties(value = "categoria", allowSetters = true)
+	private List<Produto> produtos;
+				
 	
 	public Long getId() {
 		return id;
@@ -83,14 +87,12 @@ public class Categoria {
 		this.exigePrescricaoMedica = exigePrescricaoMedica;
 	}
 
-	/*
-	public Produto getProduto() {
-		return produto;
+	public List<Produto> getProdutos() {
+		return produtos;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
-	*/
 	
 }

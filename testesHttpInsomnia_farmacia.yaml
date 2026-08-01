@@ -208,6 +208,285 @@ collection:
             send: true
             store: true
           rebuildPath: true
+  - name: Produto
+    meta:
+      id: fld_137aa7fe0af8428a8fbc3b3d0b1b2730
+      created: 1785520000100
+      modified: 1785520000100
+      sortKey: -1785520000100
+      description: Testes CRUD e consulta por atributo da entidade Produto
+    children:
+      - url: "{{ _.base_url }}/produtos"
+        name: Listar Todos os Produtos
+        meta:
+          id: req_3ef7f20e9aab4ac094b4017624db3921
+          created: 1785520000110
+          modified: 1785520000110
+          isPrivate: false
+          description: Lista todos os produtos persistidos
+          sortKey: -1785520000110
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos/1"
+        name: Buscar Produto por ID
+        meta:
+          id: req_4d99a85c3ba149a183cb014642d22ad4
+          created: 1785520000120
+          modified: 1785520000120
+          isPrivate: false
+          description: Busca um produto pelo identificador
+          sortKey: -1785520000120
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos/nome/vitamina"
+        name: Buscar Produtos por Nome
+        meta:
+          id: req_4f9c5a7605f14f45bb952cedafaf63d3
+          created: 1785520000130
+          modified: 1785520000130
+          isPrivate: false
+          description: Lista produtos filtrando por nome
+          sortKey: -1785520000130
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Cadastrar Produto Analgesico
+        meta:
+          id: req_44f48b9fdb5b474a8b22a8f7ed0ccf7a
+          created: 1785520000140
+          modified: 1785520000140
+          isPrivate: false
+          description: Cadastra um analgésico associado à categoria Medicamentos
+          sortKey: -1785520000140
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Dipirona 500mg",
+              "preco": 12.90,
+              "quantidadeEstoque": 120,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861af62",
+              "categoria": {
+                "id": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Cadastrar Produto Protetor Solar
+        meta:
+          id: req_27b8d50cd39e4b62adf6b1fef8b22d24
+          created: 1785520000141
+          modified: 1785520000141
+          isPrivate: false
+          description: Cadastra protetor solar associado à categoria Dermocosméticos
+          sortKey: -1785520000141
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Protetor Solar FPS 60",
+              "preco": 45.50,
+              "quantidadeEstoque": 80,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861af28",
+              "categoria": {
+                "id": 2
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Cadastrar Produto Enxaguante Bucal
+        meta:
+          id: req_75eb830c8cbf4fc7a6cd55854f88395d
+          created: 1785520000142
+          modified: 1785520000142
+          isPrivate: false
+          description: Cadastra enxaguante bucal associado à categoria Higiene Bucal
+          sortKey: -1785520000142
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Enxaguante Bucal Menta",
+              "preco": 18.75,
+              "quantidadeEstoque": 95,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861aec8",
+              "categoria": {
+                "id": 3
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Cadastrar Produto Vitamina C
+        meta:
+          id: req_5fef4f58d7ba4d19a1096a2a9518cd95
+          created: 1785520000143
+          modified: 1785520000143
+          isPrivate: false
+          description: Cadastra vitamina associada à categoria Medicamentos
+          sortKey: -1785520000143
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Vitamina C 1g",
+              "preco": 29.99,
+              "quantidadeEstoque": 140,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861ae0c",
+              "categoria": {
+                "id": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Cadastrar Produto Hidratante Corporal
+        meta:
+          id: req_3fb5af6818ea4e2784fed64f86f78b50
+          created: 1785520000144
+          modified: 1785520000144
+          isPrivate: false
+          description: Cadastra hidratante associado à categoria Dermocosméticos
+          sortKey: -1785520000144
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Hidratante Corporal Neutro",
+              "preco": 37.40,
+              "quantidadeEstoque": 60,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861afa0",
+              "categoria": {
+                "id": 2
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos"
+        name: Atualizar Produto
+        meta:
+          id: req_8a8f4a3f773d4b8199f905f385945f09
+          created: 1785520000150
+          modified: 1785520000150
+          isPrivate: false
+          description: Atualiza um produto existente
+          sortKey: -1785520000150
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "id": 1,
+              "nome": "Dipirona 1g",
+              "preco": 15.90,
+              "quantidadeEstoque": 110,
+              "foto": "https://imagekit.io/dashboard/media-library/detail/6a6d32805c7cd75eb861af62",
+              "categoria": {
+                "id": 1
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/produtos/5"
+        name: Remover Produto
+        meta:
+          id: req_6cedd1d0ceec4705bc37365f974d0c16
+          created: 1785520000160
+          modified: 1785520000160
+          isPrivate: false
+          description: Remove um produto do banco de dados. Ajuste o ID conforme necessário
+          sortKey: -1785520000160
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
 cookieJar:
   name: Default Jar
   meta:
